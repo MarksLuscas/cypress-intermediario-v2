@@ -12,4 +12,17 @@ Cypress.Commands.add('login', (
   
     login()
   })
+
+  Cypress.Commands.add('logout', () => {
+    const logout = () => {
+
+      cy.login()
+
+      cy.get("[data-qa-selector='user_menu']").click()
+      cy.get("[data-qa-selector='sign_out_link']").click()
+    }
+
+    logout()    
+  })
+
   
